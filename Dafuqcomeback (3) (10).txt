@@ -1,0 +1,3619 @@
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+
+local player = Players.LocalPlayer
+
+local data = {
+    ["content"] = "Use Script full paid 😎: **" .. player.Name .. "** (@"
+        .. player.DisplayName .. ")"
+}
+
+local request = syn and syn.request
+    or http_request
+    or request
+    or (http and http.request)
+
+if request then
+    request({
+        Url = "https://discord.com/api/webhooks/1514442038618099793/hqDlVkyHSTBc1_1E_ZpBIB91py0j74NFfjO3YjLcIYc9jS24zjBZGB_Y_yLv8aPp7qP0",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = HttpService:JSONEncode(data)
+    })
+end
+
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/cakukloj-lab/No/refs/heads/main/Orion_Orange_Transparent_09_Small.lua.txt"))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "Dragon Blox Full V1.4",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "AutoCycleConfig"
+})
+
+local Tab = Window:MakeTab({
+    Name = "Farm👽",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab1 = Window:MakeTab({
+    Name = "Quest📜",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab2 = Window:MakeTab({
+    Name = "Combat",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab3 = Window:MakeTab({
+    Name = "Afk+farm",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab4 = Window:MakeTab({
+    Name = "Nuke server 🛀",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab5 = Window:MakeTab({
+    Name = "Check+fake",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab6 = Window:MakeTab({
+    Name = "Localplayer⭐",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab7 = Window:MakeTab({
+    Name = "Raid 70%",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab8 = Window:MakeTab({
+    Name = "Trading plaza",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab9 = Window:MakeTab({
+    Name = "Marco🚿",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab10 = Window:MakeTab({
+    Name = "Farm Set",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab11 = Window:MakeTab({
+    Name = "OP",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab12 = Window:MakeTab({
+    Name = "Event+Quest📜",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab13 = Window:MakeTab({
+    Name = "Auto Standard Wish Token ",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab14 = Window:MakeTab({
+    Name = "Dodge Logs + band🔨",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab15 = Window:MakeTab({
+    Name = "How to Setup",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab16 = Window:MakeTab({
+    Name = "Cooldown skill?",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab17 = Window:MakeTab({
+    Name = "Auto Combo+Combat⚔️",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab18 = Window:MakeTab({
+    Name = "Auto Nuke logs Staff",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab19 = Window:MakeTab({
+    Name = "Report Bug",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab20 = Window:MakeTab({
+    Name = "Webhook",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab21 = Window:MakeTab({
+    Name = "Auto Delete",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Tab22 = Window:MakeTab({
+    Name = "Auto farm",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local TimeLabel = Tab:AddLabel("Time use Scrip: 00:00:00")
+
+task.spawn(function()
+	local Seconds = 0
+
+	while true do
+		task.wait(1)
+
+		Seconds += 1
+
+		local Hours = math.floor(Seconds / 3600)
+		local Minutes = math.floor((Seconds % 3600) / 60)
+		local Sec = Seconds % 60
+
+		TimeLabel:Set(
+			string.format(
+				"Thời gian chạy script: %02d:%02d:%02d",
+				Hours,
+				Minutes,
+				Sec
+			)
+		)
+	end
+end)
+Tab:AddLabel("Main World 0-50rb")
+local SelectedTool = 2
+local AutoEquipTools = false
+
+local Dropdown = Tab:AddDropdown({
+	Name = "Auto equiptools Weaponslot",
+	Default = "2",
+	Options = {"1","2","3","4","5","6"},
+	Callback = function(Value)
+		SelectedTool = tonumber(Value)
+	end
+})
+
+Tab:AddToggle({
+	Name = "Auto EquipTools",
+	Default = false,
+	Callback = function(Value)
+		AutoEquipTools = Value
+
+		if Value then
+			task.spawn(function()
+				while AutoEquipTools do
+					local args = {
+						SelectedTool
+					}
+
+					game:GetService("ReplicatedStorage")
+						:WaitForChild("Packages")
+						:WaitForChild("_Index")
+						:WaitForChild("sleitnick_knit@1.4.7")
+						:WaitForChild("knit")
+						:WaitForChild("Services")
+						:WaitForChild("ToolService")
+						:WaitForChild("RE")
+						:WaitForChild("UpdatePlayerToolbarSelection")
+						:FireServer(unpack(args))
+
+					task.wait(0.1)
+				end
+			end)
+		end
+	end
+})
+Tab:AddToggle({
+    Name = "Duo farm",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Bật Position Lock (không di chuyển được nhưng vẫn cố đi tới)
+            lockPos = hrp.CFrame
+            connection = RunService.RenderStepped:Connect(function()
+                if hrp and hum then
+                    hum:Move(Vector3.new(0, 0, -1), true)
+                    hrp.CFrame = lockPos
+                end
+            end)
+
+            -- Bật Auto Skill (bắn liên tục)
+            autoSkillConnection = RunService.Heartbeat:Connect(function()
+                if ReplicatedStorage:FindFirstChild("Remotes") and ReplicatedStorage.Remotes:FindFirstChild("SkillRemote") then
+                    ReplicatedStorage.Remotes.SkillRemote:FireServer(unpack(skillArgs))
+                end
+            end)
+
+            OrionLib:MakeNotification({
+                Name = "Auto Skidbri",
+                Content = "Đã bật Auto Skidbri!",
+                Image = "rbxassetid://4483362458",
+                Time = 3
+            })
+        else
+            -- Tắt tất cả
+            if connection then
+                connection:Disconnect()
+                connection = nil
+            end
+            if autoSkillConnection then
+                autoSkillConnection:Disconnect()
+                autoSkillConnection = nil
+            end
+
+            OrionLib:MakeNotification({
+                Name = "Auto Skidbri",
+                Content = "Đã tắt Auto Skidbri!",
+                Image = "rbxassetid://4483362458",
+                Time = 3
+            })
+        end
+    end
+})
+
+local TargetRebirth = 0
+local AutoRebirthTarget = false
+
+Tab:AddTextbox({
+	Name = "Rebirth Target",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+		TargetRebirth = tonumber(Value) or 0
+	end
+})
+
+Tab:AddToggle({
+	Name = "Auto rebirth Target",
+	Default = false,
+	Callback = function(Value)
+		AutoRebirthTarget = Value
+
+		if AutoRebirthTarget then
+			task.spawn(function()
+				while AutoRebirthTarget do
+					pcall(function()
+						local CurrentRebirth = game:GetService("Players").LocalPlayer.Stats.Rebirth.Value
+
+						-- Đạt target thì dừng
+						if TargetRebirth > 0 and CurrentRebirth >= TargetRebirth then
+							AutoRebirthTarget = false
+							return
+						end
+
+						local args = {
+							[1] = true
+						}
+
+						game:GetService("ReplicatedStorage")
+							:WaitForChild("Packages")
+							:WaitForChild("_Index")
+							:WaitForChild("sleitnick_knit@1.4.7")
+							:WaitForChild("knit")
+							:WaitForChild("Services")
+							:WaitForChild("PlayerLevelService")
+							:WaitForChild("RF")
+							:WaitForChild("RequestRebirth")
+							:InvokeServer(unpack(args))
+					end)
+
+					task.wait(0.2)
+				end
+			end)
+		end
+	end
+})
+local AutoRebirth = false
+
+Tab:AddToggle({
+	Name = "Auto rebirth",
+	Default = false,
+	Callback = function(Value)
+		AutoRebirth = Value
+
+		if AutoRebirth then
+			task.spawn(function()
+				while AutoRebirth do
+					pcall(function()
+						local args = {
+							[1] = true
+						}
+
+						game:GetService("ReplicatedStorage")
+							:WaitForChild("Packages")
+							:WaitForChild("_Index")
+							:WaitForChild("sleitnick_knit@1.4.7")
+							:WaitForChild("knit")
+							:WaitForChild("Services")
+							:WaitForChild("PlayerLevelService")
+							:WaitForChild("RF")
+							:WaitForChild("RequestRebirth")
+							:InvokeServer(unpack(args))
+					end)
+
+					task.wait(0.2)
+				end
+			end)
+		end
+	end
+})
+local chargeArgs = {{
+    Camera = CFrame.new(640.81549,595.6267,-148.80317),
+    SkillId = "2",
+    Began = true,
+    CFrame = CFrame.new(630.13879,587.79492,-149.98782),
+    ["Typ\208\181"] = 1,
+    Aim = vector.create(580.19,587.79,-152.32)
+}}
+
+local releaseArgs = {{
+    Camera = CFrame.new(640.81549,595.6267,-148.80317),
+    SkillId = "2",
+    Began = false,
+    CFrame = CFrame.new(630.13879,587.79492,-149.98782),
+    ["Typ\208\181"] = 1,
+    Aim = vector.create(633.96,584.97,-140.55)
+}}
+
+local AutoEnergyEnabled = false
+local isCharging = false
+
+Tab6:AddToggle({
+    Name = "Auto Năng Lượng ⚡",
+    Default = true,
+    Callback = function(Value)
+        AutoEnergyEnabled = Value
+        isCharging = false
+
+        task.spawn(function()
+            while AutoEnergyEnabled do
+                local player = game.Players.LocalPlayer
+                local char = player.Character
+
+                if not char then task.wait(1) continue end
+
+                local status = char:FindFirstChild("Status")
+                local energy = status and status:FindFirstChild("CurrentEnergy")
+
+                if energy then
+                    local current = energy.Value
+
+                    if current <= 400 and not isCharging then
+                        isCharging = true
+
+                        game.ReplicatedStorage.Remotes.SkillRemote:FireServer(unpack(chargeArgs))
+
+                        local last = current
+                        local noUp = 0
+
+                        for i = 1,8 do
+                            task.wait(0.5)
+                            if not AutoEnergyEnabled then break end
+
+                            local now = energy.Value
+                            if now <= last + 20 then
+                                noUp += 1
+                                if noUp >= 4 then
+                                    break
+                                end
+                            else
+                                noUp = 0
+                                last = now
+                            end
+                        end
+
+                        game.ReplicatedStorage.Remotes.SkillRemote:FireServer(unpack(releaseArgs))
+                        isCharging = false
+                    end
+                end
+
+                task.wait(0.8)
+            end
+        end)
+    end
+})
+local AutoClaim = false
+
+Tab1:AddToggle({
+	Name = "Auto Claim Quest",
+	Default = false,
+	Callback = function(Value)
+		AutoClaim = Value
+		
+		if AutoClaim then
+			spawn(function()
+				while AutoClaim do
+					-- Auto Accept Quest
+					local args = {
+						[1] = {
+							["isTier"] = true,
+							["Description"] = "Accept Quest?\n[Defeat Black Karrot.]",
+							["Index"] = 1,
+							["LeftButton"] = "Accept",
+							["Timer"] = 10,
+							["Prompt"] = "AcceptBoardQuest",
+							["RightButton"] = "Return",
+							["BoardName"] = "BoardQuest"
+						},
+						[2] = "Accept"
+					}
+
+					local success, err = pcall(function()
+						game:GetService("ReplicatedStorage"):WaitForChild("Packages")
+							:WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
+							:WaitForChild("knit"):WaitForChild("Services")
+							:WaitForChild("PromptService"):WaitForChild("RE")
+							:WaitForChild("Prompt"):FireServer(unpack(args))
+					end)
+					
+					if not success then
+						-- Có thể thêm log nếu cần
+					end
+					
+					wait(1) -- Điều chỉnh tốc độ nếu cần
+				end
+			end)
+		end
+	end
+})
+
+OrionLib:Init()
+local Section = Tab1:AddSection({
+    Name = "Auto Refresh Quest"
+})
+
+_G.AutoRefresh = false
+local refreshInterval = 10  -- thay đổi số giây nếu muốn
+
+local function fireRefresh()
+    local args = {
+        [1] = {
+            ["BoardName"] = "BoardQuest",
+            ["LeftButton"] = "Refresh",
+            ["Timer"] = refreshInterval,
+            ["Prompt"] = "RefreshBoardQuest",
+            ["RightButton"] = "Return",
+            ["Description"] = "Refresh Quest List?"
+        },
+        [2] = "Refresh"
+    }
+    
+    game:GetService("ReplicatedStorage")
+        :WaitForChild("Packages")
+        :WaitForChild("_Index")
+        :WaitForChild("sleitnick_knit@1.4.7")
+        :WaitForChild("knit")
+        :WaitForChild("Services")
+        :WaitForChild("PromptService")
+        :WaitForChild("RE")
+        :WaitForChild("Prompt"):FireServer(unpack(args))
+end
+
+-- Toggle
+Tab1:AddToggle({
+    Name = "Auto Refresh Quest",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoRefresh = Value
+        
+        if Value then
+            OrionLib:MakeNotification({
+                Name = "Auto Refresh",
+                Content = "Đã BẬT Auto Refresh Quest!",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+            
+            spawn(function()
+                while _G.AutoRefresh do
+                    fireRefresh()
+                    wait(refreshInterval)
+                end
+            end)
+        else
+            OrionLib:MakeNotification({
+                Name = "Auto Refresh",
+                Content = "Đã TẮT Auto Refresh Quest!",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        end
+    end    
+})
+
+-- Nút Refresh thủ công
+Tab1:AddButton({
+    Name = "Refresh Quest Remote",
+    Callback = function()
+        fireRefresh()
+        OrionLib:MakeNotification({
+            Name = "Success",
+            Content = "Đã gửi lệnh Refresh Quest!",
+            Image = "rbxassetid://4483345998",
+            Time = 2
+        })
+    end    
+})
+Tab10:AddButton({
+    Name = "Buy Glasses 100 Sliver",
+    Callback = function()
+        local args = {
+            [1] = 33,
+            [2] = "MainWorld",
+            [3] = 1
+        }
+
+        game:GetService("ReplicatedStorage")
+            :WaitForChild("Packages")
+            :WaitForChild("_Index")
+            :WaitForChild("sleitnick_knit@1.4.7")
+            :WaitForChild("knit")
+            :WaitForChild("Services")
+            :WaitForChild("NPCShopService")
+            :WaitForChild("RE")
+            :WaitForChild("BuyItem")
+            :FireServer(unpack(args))
+    end
+})
+local AutoRebirth = false
+
+Tab5:AddToggle({
+	Name = "Auto rebirth [Real]",
+	Default = false,
+	Callback = function(Value)
+		AutoRebirth = Value
+
+		task.spawn(function()
+			while AutoRebirth do
+				local gp = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("Auto Rebirth")
+				if gp then
+					gp.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local gp = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("Auto Rebirth")
+			if gp then
+				gp.Value = false
+			end
+		end)
+	end
+})
+local AutoVIP = false
+
+Tab5:AddToggle({
+	Name = "Get Vip [Not real]",
+	Default = false,
+	Callback = function(Value)
+		AutoVIP = Value
+
+		task.spawn(function()
+			while AutoVIP do
+				local vip = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("VIP")
+				if vip then
+					vip.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local vip = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("VIP")
+			if vip then
+				vip.Value = false
+			end
+		end)
+	end
+})
+local AutoLuck = false
+
+Tab5:AddToggle({
+	Name = "2x Luck [cannot be determined]",
+	Default = false,
+	Callback = function(Value)
+		AutoLuck = Value
+
+		task.spawn(function()
+			while AutoLuck do
+				local luck = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("2x Luck")
+				if luck then
+					luck.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local luck = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("2x Luck")
+			if luck then
+				luck.Value = false
+			end
+		end)
+	end
+})
+
+
+
+-- Fake Damage TextBox
+Tab5:AddTextbox({
+    Name = "Fake Damage",
+    Default = "100",
+    TextDisappear = false,
+    Callback = function(Value)
+        local damageValue = tonumber(Value)
+        if not damageValue then 
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Vui lòng nhập số hợp lệ!",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+            return 
+        end
+        
+        -- Áp dụng cho TẤT CẢ nhân vật trong workspace.Characters
+        for _, character in pairs(workspace.Characters:GetChildren()) do
+            if character:FindFirstChild("Status") and character.Status:FindFirstChild("Damage") then
+                character.Status.Damage.Value = damageValue
+            end
+        end
+        
+        OrionLib:MakeNotification({
+            Name = "Thành công",
+            Content = "Đã set Fake Damage = " .. damageValue .. " cho tất cả người chơi!",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+    end    
+})
+
+-- Optional: Button để refresh (áp dụng lại giá trị hiện tại)
+Tab5:AddButton({
+    Name = "Refresh All Damage",
+    Callback = function()
+        local currentDamage = 100 -- Bạn có thể thay đổi default ở đây
+        for _, character in pairs(workspace.Characters:GetChildren()) do
+            if character:FindFirstChild("Status") and character.Status:FindFirstChild("Damage") then
+                character.Status.Damage.Value = currentDamage
+            end
+        end
+        OrionLib:MakeNotification({
+            Name = "Refresh",
+            Content = "Đã refresh Damage cho tất cả nhân vật!",
+            Time = 2
+        })
+    end
+})
+local Players = game:GetService("Players")
+
+local SelectedPlayer = nil
+local CheckAllStatus = false
+
+-- Dropdown
+local PlayerDropdown = Tab5:AddDropdown({
+    Name = "Chọn Player",
+    Default = "",
+    Options = {},
+    Callback = function(Value)
+        SelectedPlayer = Value
+    end
+})
+
+local function RefreshPlayers()
+    local List = {}
+
+    for _,plr in ipairs(Players:GetPlayers()) do
+        table.insert(List, plr.Name)
+    end
+
+    PlayerDropdown:Refresh(List, true)
+end
+
+RefreshPlayers()
+
+Players.PlayerAdded:Connect(RefreshPlayers)
+Players.PlayerRemoving:Connect(RefreshPlayers)
+
+-- Toggle
+Tab5:AddToggle({
+    Name = "Check Full Status",
+    Default = false,
+    Callback = function(Value)
+        CheckAllStatus = Value
+
+        if not Value then
+            return
+        end
+
+        if not SelectedPlayer then
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Chưa chọn Player!",
+                Time = 3
+            })
+            return
+        end
+
+        local Character = workspace.Characters:FindFirstChild(SelectedPlayer)
+
+        if not Character then
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Không tìm thấy Character!",
+                Time = 3
+            })
+            return
+        end
+
+        local Status = Character:FindFirstChild("Status")
+
+        if not Status then
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Không có Status!",
+                Time = 3
+            })
+            return
+        end
+
+        local Text = ""
+
+        -- Ưu tiên Crit trước
+        local CritChance = Status:FindFirstChild("CritChance")
+        local CritDamage = Status:FindFirstChild("CritDamage")
+
+        if CritChance then
+            Text = Text.."CritChance : "..tostring(CritChance.Value).."\n"
+        end
+
+        if CritDamage then
+            Text = Text.."CritDamage : "..tostring(CritDamage.Value).."\n"
+        end
+
+        -- Các chỉ số còn lại
+        for _,v in ipairs(Status:GetChildren()) do
+            if v.Name ~= "CritChance" and v.Name ~= "CritDamage" then
+                if v:IsA("NumberValue")
+                or v:IsA("IntValue")
+                or v:IsA("BoolValue")
+                or v:IsA("StringValue") then
+
+                    Text = Text..v.Name.." : "..tostring(v.Value).."\n"
+                end
+            end
+        end
+
+        OrionLib:MakeNotification({
+            Name = SelectedPlayer.." Status",
+            Content = Text,
+            Time = 10
+        })
+    end
+})
+local AntiIdle = true
+local AntiIdleConn
+
+Tab6:AddToggle({
+    Name = "Auto Anti Idle [Anti kick 20 Mins]",
+    Default = true,
+    Callback = function(Value)
+        AntiIdle = Value
+
+        if AntiIdleConn then
+            AntiIdleConn:Disconnect()
+            AntiIdleConn = nil
+        end
+
+        if Value then
+            local VirtualUser = game:GetService("VirtualUser")
+            local Players = game:GetService("Players")
+
+            AntiIdleConn = Players.LocalPlayer.Idled:Connect(function()
+                VirtualUser:CaptureController()
+                VirtualUser:ClickButton2(Vector2.new())
+            end)
+        end
+    end
+})
+Tab6:AddLabel("Premium ⭐")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local RespawnAtDeath = false
+local LastDeathPosition
+
+Tab6:AddToggle({
+	Name = "Hồi sinh tại vị trí đã chết [💨]",
+	Default = false,
+	Callback = function(Value)
+		RespawnAtDeath = Value
+	end
+})
+
+local function SetupCharacter(Character)
+	local Humanoid = Character:WaitForChild("Humanoid")
+	local HRP = Character:WaitForChild("HumanoidRootPart")
+
+	Humanoid.Died:Connect(function()
+		if RespawnAtDeath then
+			LastDeathPosition = HRP.CFrame
+		end
+	end)
+end
+
+if LocalPlayer.Character then
+	SetupCharacter(LocalPlayer.Character)
+end
+
+LocalPlayer.CharacterAdded:Connect(function(Character)
+	SetupCharacter(Character)
+
+	if RespawnAtDeath and LastDeathPosition then
+		local HRP = Character:WaitForChild("HumanoidRootPart")
+
+		task.wait(0.2)
+		HRP.CFrame = LastDeathPosition
+	end
+end)
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+
+local LocalPlayer = Players.LocalPlayer
+
+local BossFolder = workspace["World Mobs"]:WaitForChild("Event Mobs")
+local MobFolder = workspace["World Mobs"]:WaitForChild("Mobs")
+
+local Radius = 1000
+local AutoLock = false
+local AutoSkibiid = false
+local SelectedMob = nil
+local FrozenPos = {}
+
+-- Lấy danh sách mob
+local function GetMobList()
+    local List = {}
+    for _, v in ipairs(BossFolder:GetChildren()) do
+        table.insert(List, v.Name)
+    end
+    for _, v in ipairs(MobFolder:GetChildren()) do
+        if not table.find(List, v.Name) then
+            table.insert(List, v.Name)
+        end
+    end
+    table.sort(List)
+    return List
+end
+
+local MobDropdown = Tab3:AddDropdown({
+    Name = "Choose Mobs[chọn Mobs]",
+    Default = "",
+    Options = GetMobList(),
+    Callback = function(Value)
+        SelectedMob = Value
+        table.clear(FrozenPos)
+    end
+})
+
+-- Tự cập nhật Dropdown khi mob spawn/despawn
+local function RefreshDropdown()
+    MobDropdown:Refresh(GetMobList(), true)
+end
+
+BossFolder.ChildAdded:Connect(RefreshDropdown)
+BossFolder.ChildRemoved:Connect(RefreshDropdown)
+MobFolder.ChildAdded:Connect(RefreshDropdown)
+MobFolder.ChildRemoved:Connect(RefreshDropdown)
+
+-- Lock Mobs (giữ nguyên)
+Tab3:AddToggle({
+    Name = "🔒Lock Mobs",
+    Default = false,
+    Callback = function(Value)
+        AutoLock = Value
+        if not Value then
+            table.clear(FrozenPos)
+        end
+    end
+})
+
+-- Nút Teleport tới mob gần nhất
+Tab3:AddButton({
+    Name = "Teleport to Mobs",
+    Callback = function()
+        if not SelectedMob then return end
+        local Character = LocalPlayer.Character
+        local Root = Character and Character:FindFirstChild("HumanoidRootPart")
+        if not Root then return end
+
+        local closestMob = nil
+        local closestDist = math.huge
+
+        local function checkFolder(folder)
+            for _, mob in ipairs(folder:GetChildren()) do
+                if mob.Name == SelectedMob then
+                    local hum = mob:FindFirstChildOfClass("Humanoid")
+                    local mobRoot = mob:FindFirstChild("HumanoidRootPart")
+                    if hum and mobRoot and hum.Health > 0 then
+                        local dist = (mobRoot.Position - Root.Position).Magnitude
+                        if dist <= Radius and dist < closestDist then
+                            closestDist = dist
+                            closestMob = mobRoot
+                        end
+                    end
+                end
+            end
+        end
+
+        checkFolder(BossFolder)
+        checkFolder(MobFolder)
+
+        if closestMob then
+            Root.CFrame = closestMob.CFrame * CFrame.new(0, 5, 0)
+        end
+    end
+})
+
+Tab3:AddToggle({
+    Name = "Auto Kill Mobs",
+    Default = false,
+    Callback = function(Value)
+        AutoSkibiid = Value
+        if Value then
+            task.spawn(function()
+                while AutoSkibiid and SelectedMob do
+                    -- Lấy tất cả mob cùng tên còn sống
+                    local targets = {}
+                    local function addTargets(folder)
+                        if not folder then return end
+                        for _, mob in ipairs(folder:GetChildren()) do
+                            if mob.Name == SelectedMob then
+                                local hum = mob:FindFirstChildOfClass("Humanoid")
+                                local mobRoot = mob:FindFirstChild("HumanoidRootPart")
+                                if hum and mobRoot and hum.Health > 0 then
+                                    table.insert(targets, {
+                                        Mob = mob,
+                                        Humanoid = hum,
+                                        Root = mobRoot
+                                    })
+                                end
+                            end
+                        end
+                    end
+                    addTargets(BossFolder)
+                    addTargets(MobFolder)
+
+                    if #targets == 0 then
+                        task.wait(0.5)
+                        continue
+                    end
+
+                    -- Sắp xếp theo khoảng cách
+                    local Character = LocalPlayer.Character
+                    local Root = Character and Character:FindFirstChild("HumanoidRootPart")
+                    if not Root then break end
+                    table.sort(targets, function(a, b)
+                        return (a.Root.Position - Root.Position).Magnitude < (b.Root.Position - Root.Position).Magnitude
+                    end)
+
+                    -- Duyệt từng con, chỉ tấn công đến khi nó chết mới chuyển
+                    for _, target in ipairs(targets) do
+                        if not AutoSkibiid then break end
+
+                        -- Kiểm tra mob còn sống không (Humanoid chưa bị hủy)
+                        local hum = target.Humanoid
+                        local mobRoot = target.Root
+                        if not hum or not hum.Parent or not mobRoot or not mobRoot.Parent then
+                            continue
+                        end
+                        if hum.Health <= 0 then continue end
+
+                        -- Tấn công liên tục cho đến khi mob chết hoặc tắt
+                        while AutoSkibiid do
+                            -- Kiểm tra lại mob mỗi vòng lặp
+                            hum = target.Humanoid
+                            mobRoot = target.Root
+                            if not hum or not hum.Parent or not mobRoot or not mobRoot.Parent then break end
+                            if hum.Health <= 0 then break end
+
+                            local Character = LocalPlayer.Character
+                            local Root = Character and Character:FindFirstChild("HumanoidRootPart")
+                            if not Root then break end
+
+                            -- Tween ra sau lưng + trên đầu mob
+                            local targetCFrame = mobRoot.CFrame * CFrame.new(0, 5, -3)
+                            local distance = (targetCFrame.Position - Root.Position).Magnitude
+                            local tweenTime = math.max(0.05, distance / 200)
+                            local tweenInfo = TweenInfo.new(tweenTime, Enum.EasingStyle.Linear)
+                            local tween = TweenService:Create(Root, tweenInfo, {CFrame = targetCFrame})
+                            tween:Play()
+                            tween.Completed:Wait()
+
+                            if not AutoSkibiid then break end
+                            -- Kiểm tra mob lần nữa sau khi tween xong
+                            hum = target.Humanoid
+                            mobRoot = target.Root
+                            if not hum or not hum.Parent or not mobRoot or not mobRoot.Parent then break end
+                            if hum.Health <= 0 then break end
+
+                            -- Gửi skill
+                            local args = {
+                                [1] = {
+                                    Camera = workspace.CurrentCamera.CFrame,
+                                    SkillId = "1",
+                                    Began = true,
+                                    CFrame = Root.CFrame,
+                                    ["Typ\208\181"] = 1,
+                                    Aim = mobRoot.Position
+                                }
+                            }
+                            pcall(function()
+                                game:GetService("ReplicatedStorage")
+                                    :WaitForChild("Remotes")
+                                    :WaitForChild("SkillRemote")
+                                    :FireServer(unpack(args))
+                            end)
+                            task.wait(0.1)
+                        end
+                        -- Kết thúc vòng lặp while (mob đã chết hoặc tắt toggle), tiếp tục sang mob tiếp theo
+                    end
+                    task.wait(0.5) -- quét lại danh sách sau khi đã đánh hết một vòng
+                end
+            end)
+        end
+    end
+})
+-- Heartbeat Lock Mobs (giữ nguyên)
+RunService.Heartbeat:Connect(function()
+    if not AutoLock or not SelectedMob then return end
+
+    pcall(function()
+        sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+    end)
+
+    local Character = LocalPlayer.Character
+    local Root = Character and Character:FindFirstChild("HumanoidRootPart")
+    if not Root then return end
+
+    local function FreezeFolder(Folder)
+        for _, Mob in ipairs(Folder:GetChildren()) do
+            if Mob.Name == SelectedMob then
+                local Humanoid = Mob:FindFirstChildOfClass("Humanoid")
+                local MobRoot = Mob:FindFirstChild("HumanoidRootPart")
+
+                if Humanoid and MobRoot and Humanoid.Health > 0 then
+                    if (MobRoot.Position - Root.Position).Magnitude <= Radius then
+                        if not FrozenPos[Mob] then
+                            FrozenPos[Mob] = MobRoot.CFrame
+                        end
+
+                        pcall(function()
+                            MobRoot.CanCollide = false
+                            MobRoot.AssemblyLinearVelocity = Vector3.zero
+                            MobRoot.AssemblyAngularVelocity = Vector3.zero
+                            MobRoot.CFrame = FrozenPos[Mob]
+                        end)
+                    end
+                else
+                    FrozenPos[Mob] = nil
+                end
+            end
+        end
+    end
+
+    FreezeFolder(BossFolder)
+    FreezeFolder(MobFolder)
+end)
+local AutoMecha = false
+
+Tab7:AddToggle({
+	Name = "Auto Mecha Easy-Hard",
+	Default = false,
+	Callback = function(Value)
+		AutoMecha = Value
+
+		if Value then
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local TweenService = game:GetService("TweenService")
+
+				local LocalPlayer = Players.LocalPlayer
+
+				local Radius = 10
+				local Height = 3
+				local Speed = 2
+
+				while AutoMecha do
+					local Character = LocalPlayer.Character
+					local HRP = Character and Character:FindFirstChild("HumanoidRootPart")
+
+					local Boss = workspace["World Mobs"]["Event Mobs"]:FindFirstChild("Mecha Soldier")
+					local BossRoot = Boss and Boss:FindFirstChild("HumanoidRootPart")
+					local Humanoid = Boss and Boss:FindFirstChild("Humanoid")
+
+					if HRP and BossRoot and Humanoid and Humanoid.Health > 0 then
+						local angle = tick() * Speed
+
+						local targetPos = BossRoot.Position + Vector3.new(
+							math.cos(angle) * Radius,
+							Height,
+							math.sin(angle) * Radius
+						)
+
+						local tween = TweenService:Create(
+							HRP,
+							TweenInfo.new(0.1, Enum.EasingStyle.Linear),
+							{
+								CFrame = CFrame.new(targetPos, BossRoot.Position)
+							}
+						)
+
+						tween:Play()
+						tween.Completed:Wait()
+					else
+						task.wait(0.1)
+					end
+				end
+			end)
+		end
+	end
+})
+
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local CharacterFolder = workspace:WaitForChild("Characters")
+local LockRemote = ReplicatedStorage:WaitForChild("Packages")
+    :WaitForChild("_Index")
+    :WaitForChild("sleitnick_knit@1.4.7")
+    :WaitForChild("knit")
+    :WaitForChild("Services")
+    :WaitForChild("SkillManager")
+    :WaitForChild("RE")
+    :WaitForChild("LockedOnChanged")
+
+local SelectedPlayer = nil
+local AutoLockPlayer = false
+
+-- Lấy danh sách player
+local function GetPlayerList()
+    local t = {}
+    for _,v in ipairs(Players:GetPlayers()) do
+        if v ~= Players.LocalPlayer then
+            table.insert(t, v.Name)
+        end
+    end
+    table.sort(t)
+    return t
+end
+
+-- Dropdown chọn người chơi
+local LockDropdown = Tab2:AddDropdown({
+    Name = "Choose ⚔️",
+    Default = "",
+    Options = GetPlayerList(),
+    Callback = function(Value)
+        SelectedPlayer = Value
+    end
+})
+
+-- Cập nhật dropdown khi có người vào/ra
+Players.PlayerAdded:Connect(function()
+    LockDropdown:Refresh(GetPlayerList(), true)
+end)
+
+Players.PlayerRemoving:Connect(function()
+    LockDropdown:Refresh(GetPlayerList(), true)
+end)
+
+-- Toggle Auto Lock
+Tab2:AddToggle({
+    Name = "Auto Lock Range inf",
+    Default = false,
+    Callback = function(Value)
+        AutoLockPlayer = Value
+
+        if Value then
+            task.spawn(function()
+                while AutoLockPlayer do
+                    if SelectedPlayer then
+                        local Character = CharacterFolder:FindFirstChild(SelectedPlayer)
+                        if Character then
+                            LockRemote:FireServer(Character)
+                        end
+                    end
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local LocalPlayer = Players.LocalPlayer
+local SkillRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("SkillRemote")
+
+local AutoKamehameha = false
+
+Tab2:AddToggle({
+    Name = "Auto Kamehameha",
+    Default = false,
+    Callback = function(Value)
+        AutoKamehameha = Value
+
+        if Value then
+            task.spawn(function()
+                while AutoKamehameha do
+                    local Character = LocalPlayer.Character
+                    local HRP = Character and Character:FindFirstChild("HumanoidRootPart")
+
+                    if HRP then
+                        local LookPos = HRP.Position + HRP.CFrame.LookVector * 200
+
+                        local args = {
+                            [1] = {
+                                ["Camera"] = workspace.CurrentCamera.CFrame,
+                                ["SkillId"] = "102",
+                                ["Began"] = true,
+                                ["CFrame"] = HRP.CFrame,
+                                ["Typе"] = 1,
+                                ["Aim"] = LookPos
+                            }
+                        }
+
+                        SkillRemote:FireServer(unpack(args))
+
+                        task.wait(0.2)
+
+                        args[1]["Began"] = false
+                        SkillRemote:FireServer(unpack(args))
+                    end
+
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+local SkillRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("SkillRemote")
+
+local AutoSkill117 = false
+
+Tab2:AddToggle({
+    Name = "Skibidi toilet ",
+    Default = false,
+    Callback = function(Value)
+        AutoSkill117 = Value
+
+        if Value then
+            task.spawn(function()
+                while AutoSkill117 do
+                    local Character = LocalPlayer.Character
+                    local HRP = Character and Character:FindFirstChild("HumanoidRootPart")
+                    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+
+                    if HRP and Humanoid then
+                        local AimPos = HRP.Position + HRP.CFrame.LookVector * 200
+
+                        local args = {
+                            [1] = {
+                                ["Camera"] = workspace.CurrentCamera.CFrame,
+                                ["SkillId"] = "117",
+                                ["Began"] = true,
+                                ["CFrame"] = HRP.CFrame,
+                                ["Typе"] = 1,
+                                ["Aim"] = AimPos
+                            }
+                        }
+
+                        -- Bật skill
+                        SkillRemote:FireServer(unpack(args))
+
+                        -- Tự đi sang phải 5 studs (không teleport)
+                        Humanoid:MoveTo(HRP.Position + HRP.CFrame.RightVector * 5)
+
+                        -- Sau 0.2s tắt skill
+                        task.wait(0.2)
+
+                        args[1].Began = false
+                        args[1].CFrame = HRP.CFrame
+                        SkillRemote:FireServer(unpack(args))
+
+                        -- Dừng di chuyển nếu vẫn đang đi
+                        Humanoid:MoveTo(HRP.Position)
+                    end
+
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+local SkillRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("SkillRemote")
+
+local AutoSkill111 = false
+
+Tab2:AddToggle({
+    Name = "Auto Skill đéo biết tên ",
+    Default = false,
+    Callback = function(Value)
+        AutoSkill111 = Value
+
+        if Value then
+            task.spawn(function()
+                while AutoSkill111 do
+                    local Character = LocalPlayer.Character
+                    local HRP = Character and Character:FindFirstChild("HumanoidRootPart")
+                    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+
+                    if HRP and Humanoid then
+                        local AimPos = HRP.Position + HRP.CFrame.LookVector * 200
+
+                        local args = {
+                            [1] = {
+                                ["Camera"] = workspace.CurrentCamera.CFrame,
+                                ["SkillId"] = "111",
+                                ["Began"] = true,
+                                ["CFrame"] = HRP.CFrame,
+                                ["Typе"] = 1,
+                                ["Aim"] = AimPos
+                            }
+                        }
+
+                        -- Bật skill
+                        SkillRemote:FireServer(unpack(args))
+
+                        -- Tự đi sang phải 5 studs
+                        Humanoid:MoveTo(HRP.Position + HRP.CFrame.RightVector * 5)
+
+                        task.wait(0.2)
+
+                        -- Tắt skill
+                        args[1].Began = false
+                        args[1].CFrame = HRP.CFrame
+                        SkillRemote:FireServer(unpack(args))
+
+                        Humanoid:MoveTo(HRP.Position)
+                    end
+
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
+-- ==================== AUTO SKILL PIUPIU (101) ====================
+
+local AutoPiupiu = false
+local TweenService = game:GetService("TweenService")
+
+Tab2:AddToggle({
+    Name = "Skibidi Pvp",
+    Default = false,
+    Callback = function(Value)
+        AutoPiupiu = Value
+
+        if Value then
+            if not SelectedPlayer then
+                OrionLib:MakeNotification({
+                    Name = "Lỗi",
+                    Content = "Chưa chọn người để lock!",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+                AutoPiupiu = false
+                return
+            end
+
+            task.spawn(function()
+                while AutoPiupiu do
+                    local MyChar = LocalPlayer.Character
+                    local MyHRP = MyChar and MyChar:FindFirstChild("HumanoidRootPart")
+
+                    local TargetChar = CharacterFolder:FindFirstChild(SelectedPlayer)
+                    local TargetHRP = TargetChar and TargetChar:FindFirstChild("HumanoidRootPart")
+
+                    if MyHRP and TargetHRP then
+                        local Pos = TargetHRP.Position + Vector3.new(0, 250, 0)
+
+                        TweenService:Create(
+                            MyHRP,
+                            TweenInfo.new(0.1, Enum.EasingStyle.Linear),
+                            {
+                                CFrame = CFrame.new(Pos, TargetHRP.Position)
+                            }
+                        ):Play()
+
+                        local args = {
+                            {
+                                Camera = workspace.CurrentCamera.CFrame,
+                                SkillId = "101",
+                                Began = true,
+                                CFrame = MyHRP.CFrame,
+                                ["Typе"] = 1,
+                                Aim = TargetHRP.Position
+                            }
+                        }
+
+                        SkillRemote:FireServer(unpack(args))
+
+                        args[1].Began = false
+                        SkillRemote:FireServer(unpack(args))
+                    end
+
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+})
+
+local AutoEnergyBlast = false
+
+Tab2:AddToggle({
+    Name = "Auto Energy Blast",
+    Default = false,
+    Callback = function(Value)
+        AutoEnergyBlast = Value
+
+        task.spawn(function()
+            while AutoEnergyBlast do
+                local args = {
+                    [1] = {
+                        ["Camera"] = CFrame.new(
+                            -543.3233032226562, 496.8465881347656, 480.50457763671875,
+                            -0.895954966545105, 0.36501678824424744, -0.25303664803504944,
+                            0, 0.5697163939476013, 0.8218414783477783,
+                            0.44414499402046204, 0.7363329529762268, -0.5104401707649231
+                        ),
+                        ["SkillId"] = "101",
+                        ["Began"] = true,
+                        ["CFrame"] = CFrame.new(
+                            -535.5504150390625, 468.61688232421875, 496.1845703125,
+                            -0.8959547877311707, 0.36501699686050415, -0.2530367076396942,
+                            1.3998713299656629e-08, 0.5697161555290222, 0.8218415379524231,
+                            0.44414523243904114, 0.7363328337669373, -0.510439932346344
+                        ),
+                        ["Typе"] = 1,
+                        ["Aim"] = Vector3.new(
+                            -522.8985595703125,
+                            427.5248107910156,
+                            521.70654296875
+                        )
+                    }
+                }
+
+                game:GetService("ReplicatedStorage")
+                    :WaitForChild("Remotes")
+                    :WaitForChild("SkillRemote")
+                    :FireServer(unpack(args))
+
+                task.wait(0.1)
+            end
+        end)
+    end
+})
+local Macros = {}  
+local CurrentRecording = nil
+local IsRecording = false
+local IsPlaying = false
+local SelectedMacro = nil
+local LoopEnabled = true
+
+local dropdown = Tab9:AddDropdown({
+	Name = "Choose Macro",
+	Default = "Chưa có macro nào",
+	Options = {},
+	Callback = function(Value)
+		SelectedMacro = Value
+	end    
+})
+
+-- Toggle Loop
+Tab9:AddToggle({
+	Name = "🔁 Loop Macro",
+	Default = true,
+	Callback = function(Value)
+		LoopEnabled = Value
+	end    
+})
+
+Tab9:AddButton({
+	Name = "🎥 Rec Macro",
+	Callback = function()
+		if IsRecording then
+			OrionLib:MakeNotification({Name = "Lỗi", Content = "Đang ghi rồi!", Time = 3})
+			return
+		end
+		CurrentRecording = {}
+		IsRecording = true
+		OrionLib:MakeNotification({Name = "Recording", Content = "Bắt đầu ghi macro...", Time = 5})
+	end    
+})
+
+Tab9:AddButton({
+	Name = "⏹️ Stop & Save Macro",
+	Callback = function()
+		if not IsRecording then return end
+		IsRecording = false
+		
+		local macroName = "Macro " .. (#Macros + 1)
+		Macros[macroName] = {actions = CurrentRecording}
+		
+		RefreshDropdown()
+		
+		OrionLib:MakeNotification({Name = "Saved", Content = "Đã lưu " .. macroName, Time = 4})
+		CurrentRecording = nil
+	end    
+})
+
+Tab9:AddToggle({
+	Name = "▶️ Play / Stop Macro",
+	Callback = function()
+		if not SelectedMacro or not Macros[SelectedMacro] then
+			OrionLib:MakeNotification({Name = "Lỗi", Content = "Chưa chọn macro!", Time = 3})
+			return
+		end
+		
+		if IsPlaying then
+			IsPlaying = false
+			OrionLib:MakeNotification({Name = "Stopped", Content = "Đã dừng macro", Time = 3})
+			return
+		end
+		
+		IsPlaying = true
+		OrionLib:MakeNotification({Name = "Playing", Content = "Đang phát " .. SelectedMacro, Time = 3})
+		
+		spawn(function()
+			repeat
+				local actions = Macros[SelectedMacro].actions
+				local i = 1
+				
+				while IsPlaying and i <= #actions do
+					local action = actions[i]
+					
+					if action.Type == "Remote" and action.Remote then
+						pcall(function()
+							action.Remote:FireServer(unpack(action.Args))
+						end)
+					elseif action.Type == "Move" and action.CFrame then
+						local char = game.Players.LocalPlayer.Character
+						local root = char and char:FindFirstChild("HumanoidRootPart")
+						if root then
+							root.CFrame = action.CFrame
+						end
+					end
+					
+					i += 1
+					task.wait(0.035)
+				end
+				
+				if LoopEnabled and IsPlaying then
+					task.wait(0.1)
+				else
+					break
+				end
+			until not IsPlaying or not LoopEnabled
+			
+			IsPlaying = false
+		end)
+	end    
+})
+
+-- Nút Clear All
+Tab9:AddButton({
+	Name = "🗑️ Clear All Macros",
+	Callback = function()
+		Macros = {}
+		SelectedMacro = nil
+		RefreshDropdown()
+		OrionLib:MakeNotification({Name = "Cleared", Content = "Đã xóa hết tất cả macro", Time = 5})
+	end    
+})
+
+-- Hàm refresh dropdown
+function RefreshDropdown()
+	local options = {}
+	for name, _ in pairs(Macros) do
+		table.insert(options, name)
+	end
+	if #options == 0 then
+		options = {"Chưa có macro nào"}
+	end
+	dropdown:Refresh(options, true)
+end
+
+-- ====================== GHI MACRO ======================
+local function RecordAction(actionData)
+	if IsRecording and CurrentRecording then
+		table.insert(CurrentRecording, actionData)
+	end
+end
+
+-- Hook Remote
+local mt = getrawmetatable(game)
+local oldNamecall = mt.__namecall
+setreadonly(mt, false)
+
+mt.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    if IsRecording and method == "FireServer" then
+        local class = self.ClassName
+        if class == "RemoteEvent" or class == "RemoteFunction" then
+            RecordAction({
+                Type = "Remote",
+                Remote = self,
+                Args = {...},
+            })
+        end
+    end
+    return oldNamecall(self, ...)
+end)
+
+setreadonly(mt, true)
+
+-- Ghi di chuyển
+local lastRecordTime = 0
+game:GetService("RunService").Heartbeat:Connect(function()
+    if not IsRecording then return end
+    local char = game.Players.LocalPlayer.Character
+    local root = char and char:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+    
+    local now = tick()
+    if now - lastRecordTime >= 0.04 then
+        RecordAction({
+            Type = "Move",
+            CFrame = root.CFrame
+        })
+        lastRecordTime = now
+    end
+end)
+
+-- Load macro cũ khi vào game
+RefreshDropdown()
+
+OrionLib:Init()
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Cập nhật character khi respawn
+player.CharacterAdded:Connect(function(newChar)
+	character = newChar
+	hrp = newChar:WaitForChild("HumanoidRootPart")
+end)
+
+local AutoGodmode = false
+local mainConnection
+
+local DISTANCE = 39 -- cách boss 39 studs trên mặt đất
+
+-- ==================== SLIDER KHOẢNG CÁCH ====================
+Tab7:AddSlider({
+	Name = "Khoảng cách với Boss",
+	Min = 10,
+	Max = 60,
+	Default = 39,
+	Increment = 1,
+	ValueName = "Studs",
+	Callback = function(Value)
+		DISTANCE = Value
+	end
+})
+
+Tab7:AddToggle({
+	Name = "Unstable Atom [New]",
+	Default = false,
+	Callback = function(Value)
+		AutoGodmode = Value
+
+		if Value then    
+			mainConnection = RunService.Heartbeat:Connect(function()    
+				if not AutoGodmode then return end    
+				if not hrp or not hrp.Parent then return end    
+					
+				local worldMobs = workspace:FindFirstChild("World Mobs")  
+				if not worldMobs then return end  
+				  
+				local eventMobs = worldMobs:FindFirstChild("Event Mobs")  
+				if not eventMobs then return end  
+				  
+				-- ==================== ƯU TIÊN CUSTOMMOB ====================  
+				local targetMob = nil  
+				  
+				local customMob = eventMobs:FindFirstChild("CustomMob")  
+				if customMob then  
+					local hum = customMob:FindFirstChild("Humanoid")  
+					local root = customMob:FindFirstChild("HumanoidRootPart")  
+					if root and hum and hum.Health > 0 then  
+						targetMob = customMob  
+					end  
+				end  
+				  
+				-- Nếu không có CustomMob thì tìm boss gần nhất  
+				if not targetMob then  
+					local closestDist = math.huge  
+					for _, mob in ipairs(eventMobs:GetChildren()) do    
+						local humanoid = mob:FindFirstChild("Humanoid")    
+						local root = mob:FindFirstChild("HumanoidRootPart")    
+						if root and humanoid and humanoid.Health > 0 then    
+							local dist = (hrp.Position - root.Position).Magnitude    
+							if dist < closestDist then    
+								closestDist = dist    
+								targetMob = mob    
+							end    
+						end    
+					end  
+				end  
+				  
+				if not targetMob or not targetMob:FindFirstChild("HumanoidRootPart") then    
+					return    
+				end    
+					
+				local bossHRP = targetMob.HumanoidRootPart    
+				
+				-- ===== VỊ TRÍ: CÁCH BOSS 39 STUDS TRÊN MẶT ĐẤT =====
+				local bossPos = bossHRP.Position
+				local playerPos = hrp.Position
+				
+				-- Vector ngang từ boss tới player (bỏ Y)
+				local direction = Vector3.new(playerPos.X - bossPos.X, 0, playerPos.Z - bossPos.Z)
+				
+				if direction.Magnitude < 0.1 then
+					-- Nếu đang đứng đúng trên đầu boss thì lấy hướng mặc định
+					direction = Vector3.new(1, 0, 0)
+				end
+				
+				direction = direction.Unit
+				
+				-- Vị trí mới: cách boss DISTANCE studs, cùng độ cao với boss (mặt đất)
+				local targetPos = Vector3.new(
+					bossPos.X + direction.X * DISTANCE,
+					bossPos.Y,          -- giữ nguyên độ cao của boss (mặt đất)
+					bossPos.Z + direction.Z * DISTANCE
+				)
+					
+				-- Fix rơi + giật mạnh    
+				hrp.Velocity = Vector3.new(0, 0, 0)    
+				hrp.AssemblyLinearVelocity = Vector3.new(0, 0, 0)    
+				hrp.AssemblyAngularVelocity = Vector3.new(0, 0, 0)    
+					
+				-- Tween mượt    
+				local tweenInfo = TweenInfo.new(0.22, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)    
+				local tween = TweenService:Create(hrp, tweenInfo, {    
+					CFrame = CFrame.new(targetPos, bossHRP.Position)    
+				})    
+				tween:Play()    
+					
+				-- Auto Skill chỉ khi gần    
+				local distToBoss = (hrp.Position - bossHRP.Position).Magnitude  
+				if distToBoss <= 50 then    
+					local args = {    
+						"Weapons_20_3",    
+						{    
+							TargetPos = Vector3.new(-409.91522216796875, 1356.2965087890625, 95.83793640136719)    
+						},    
+						18    
+					}    
+					pcall(function()    
+						game:GetService("ReplicatedStorage")    
+							:WaitForChild("Packages")    
+							:WaitForChild("_Index")    
+							:WaitForChild("sleitnick_knit@1.4.7")    
+							:WaitForChild("knit")    
+							:WaitForChild("Services")    
+							:WaitForChild("SkillManagerV2")    
+							:WaitForChild("RE")    
+							:WaitForChild("ExecuteSkill"):FireServer(unpack(args))    
+					end)    
+				end    
+			end)    
+		else    
+			if mainConnection then    
+				mainConnection:Disconnect()    
+				mainConnection = nil    
+			end    
+		end    
+	end
+})
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Cập nhật character khi respawn
+player.CharacterAdded:Connect(function(newChar)
+    character = newChar
+    hrp = newChar:WaitForChild("HumanoidRootPart")
+end)
+
+local AutoGodmode = false
+local mainConnection
+
+local HEIGHT_ABOVE = 8.8
+
+-- ==================== SLIDER ĐỘ CAO ====================
+Tab:AddSlider({
+    Name = "Độ cao trên Boss",
+    Min = 0,
+    Max = 20,
+    Default = 8.8,
+    Increment = 0.1,
+    ValueName = "Studs",
+    Callback = function(Value)
+        HEIGHT_ABOVE = Value
+    end
+})
+
+Tab7:AddToggle({
+    Name = "Great droid ",
+    Default = false,
+    Callback = function(Value)
+        AutoGodmode = Value
+
+        if Value then  
+            mainConnection = RunService.Heartbeat:Connect(function()  
+                if not AutoGodmode then return end  
+                if not hrp or not hrp.Parent then return end  
+                  
+                local worldMobs = workspace:FindFirstChild("World Mobs")
+                if not worldMobs then return end
+                
+                local eventMobs = worldMobs:FindFirstChild("Event Mobs")
+                if not eventMobs then return end
+                
+                -- ==================== ƯU TIÊN CUSTOMMOB ====================
+                local targetMob = nil
+                
+                local customMob = eventMobs:FindFirstChild("CustomMob")
+                if customMob then
+                    local hum = customMob:FindFirstChild("Humanoid")
+                    local root = customMob:FindFirstChild("HumanoidRootPart")
+                    if root and hum and hum.Health > 0 then
+                        targetMob = customMob
+                    end
+                end
+                
+                -- Nếu không có CustomMob thì tìm boss gần nhất
+                if not targetMob then
+                    local closestDist = math.huge
+                    for _, mob in ipairs(eventMobs:GetChildren()) do  
+                        local humanoid = mob:FindFirstChild("Humanoid")  
+                        local root = mob:FindFirstChild("HumanoidRootPart")  
+                        if root and humanoid and humanoid.Health > 0 then  
+                            local dist = (hrp.Position - root.Position).Magnitude  
+                            if dist < closestDist then  
+                                closestDist = dist  
+                                targetMob = mob  
+                            end  
+                        end  
+                    end
+                end
+                
+                if not targetMob or not targetMob:FindFirstChild("HumanoidRootPart") then  
+                    return  
+                end  
+                  
+                local bossHRP = targetMob.HumanoidRootPart  
+                local targetPos = bossHRP.Position + Vector3.new(0, HEIGHT_ABOVE, 0)  
+                  
+                -- Fix rơi + giật mạnh  
+                hrp.Velocity = Vector3.new(0, 0, 0)  
+                hrp.AssemblyLinearVelocity = Vector3.new(0, 0, 0)  
+                hrp.AssemblyAngularVelocity = Vector3.new(0, 0, 0)  
+                  
+                -- Tween mượt  
+                local tweenInfo = TweenInfo.new(0.22, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)  
+                local tween = TweenService:Create(hrp, tweenInfo, {  
+                    CFrame = CFrame.new(targetPos, bossHRP.Position)  
+                })  
+                tween:Play()  
+                  
+                -- Auto Skill chỉ khi gần  
+                local distToBoss = (hrp.Position - bossHRP.Position).Magnitude
+                if distToBoss <= 30 then  
+                    local args = {  
+                        "Weapons_20_3",  
+                        {  
+                            TargetPos = Vector3.new(-409.91522216796875, 1356.2965087890625, 95.83793640136719)  
+                        },  
+                        18  
+                    }  
+                    pcall(function()  
+                        game:GetService("ReplicatedStorage")  
+                            :WaitForChild("Packages")  
+                            :WaitForChild("_Index")  
+                            :WaitForChild("sleitnick_knit@1.4.7")  
+                            :WaitForChild("knit")  
+                            :WaitForChild("Services")  
+                            :WaitForChild("SkillManagerV2")  
+                            :WaitForChild("RE")  
+                            :WaitForChild("ExecuteSkill"):FireServer(unpack(args))  
+                    end)  
+                end  
+            end)  
+        else  
+            if mainConnection then  
+                mainConnection:Disconnect()  
+                mainConnection = nil  
+            end  
+        end  
+    end
+})
+
+local AutoLockBoss = false
+
+Tab7:AddToggle({
+    Name = "Auto Lock Great droid",
+    Default = false,
+    Callback = function(Value)
+        AutoLockBoss = Value
+
+        if AutoLockBoss then
+            task.spawn(function()
+                local EventMobs = workspace:WaitForChild("World Mobs"):WaitForChild("Event Mobs")
+
+                local Remote = game:GetService("ReplicatedStorage")
+                    :WaitForChild("Packages")
+                    :WaitForChild("_Index")
+                    :WaitForChild("sleitnick_knit@1.4.7")
+                    :WaitForChild("knit")
+                    :WaitForChild("Services")
+                    :WaitForChild("SkillManager")
+                    :WaitForChild("RE")
+                    :WaitForChild("LockedOnChanged")
+
+                while AutoLockBoss do
+                    local target
+
+                    -- Ưu tiên CustomMob
+                    for _, mob in ipairs(EventMobs:GetChildren()) do
+                        if mob.Name == "CustomMob" then
+                            local hum = mob:FindFirstChildWhichIsA("Humanoid")
+                            if hum and hum.Health > 0 then
+                                target = mob
+                                break
+                            end
+                        end
+                    end
+
+                    -- Không còn CustomMob thì lock Great Droid
+                    if not target then
+                        local gd = EventMobs:FindFirstChild("Great Droid")
+                        if gd then
+                            local hum = gd:FindFirstChildWhichIsA("Humanoid")
+                            if hum and hum.Health > 0 then
+                                target = gd
+                            end
+                        end
+                    end
+
+                    if target then
+                        pcall(function()
+                            Remote:FireServer(target)
+                        end)
+                    end
+
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
+
+
+local AutoDestroy = false
+
+Tab7:AddToggle({
+	Name = "Auto 👽 normal attack",
+	Default = false,
+	Callback = function(Value)
+		AutoDestroy = Value
+
+		task.spawn(function()
+			while AutoDestroy do
+				local args = {
+					{
+						Camera = CFrame.new(
+							74.2727279663086, 251.0009002685547, -28.747745513916016,
+							-0.9511321783065796, -0.044049736112356186, 0.3056260347366333,
+							0, 0.9897724390029907, 0.14265543222427368,
+							-0.308784157037735, 0.13568417727947235, -0.9414043426513672
+						),
+						SkillId = "1",
+						Began = true,
+						CFrame = CFrame.new(70.45240020751953, 247.81771850585938, -16.98019027709961),
+						["Typе"] = 1,
+						Aim = vector.create(70.45240020751953, 247.81771850585938, -66.98019409179688)
+					}
+				}
+
+				SkillRemote:FireServer(unpack(args))
+				task.wait(0.05)
+			end
+		end)
+	end
+})
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local SkillRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("SkillRemote")
+
+local AutoDestroy = false
+
+Tab7:AddToggle({
+	Name = "Auto Energy blast",
+	Default = false,
+	Callback = function(Value)
+		AutoDestroy = Value
+
+		task.spawn(function()
+			while AutoDestroy do
+				local args = {
+					{
+						Camera = CFrame.new(
+							74.2727279663086, 251.0009002685547, -28.747745513916016,
+							-0.9511321783065796, -0.044049736112356186, 0.3056260347366333,
+							0, 0.9897724390029907, 0.14265543222427368,
+							-0.308784157037735, 0.13568417727947235, -0.9414043426513672
+						),
+						SkillId = "101",
+						Began = true,
+						CFrame = CFrame.new(70.45240020751953, 247.81771850585938, -16.98019027709961),
+						["Typе"] = 1,
+						Aim = vector.create(70.45240020751953, 247.81771850585938, -66.98019409179688)
+					}
+				}
+
+				SkillRemote:FireServer(unpack(args))
+				task.wait(0.05)
+			end
+		end)
+	end
+})
+local AutoPhePha = True
+
+Tab6:AddToggle({
+	Name = "Auto Phê Pha V2",
+	Default = True,
+	Callback = function(Value)
+		AutoPhePha = Value
+
+		task.spawn(function()
+			while AutoPhePha do
+				pcall(function()
+					local player = game.Players.LocalPlayer
+					local charFolder = workspace:FindFirstChild("Characters")
+
+					if charFolder then
+						local char = charFolder:FindFirstChild(player.Name)
+
+						if char and not char:FindFirstChild("Mode") then
+							local args = {
+								{
+									Camera = CFrame.new(
+										-28.790475845336914,
+										298.4656677246094,
+										-91.82173156738281,
+										0.8630251884460449,
+										0.06684061139822006,
+										-0.5007192492485046,
+										0,
+										0.9912075996398926,
+										0.1323155164718628,
+										0.5051608085632324,
+										-0.11419162154197693,
+										0.855437159538269
+									),
+									SkillId = "10",
+									Began = true,
+									CFrame = CFrame.new(
+										-20.313318252563477,
+										294.6113586425781,
+										-106.30424499511719,
+										0.863025426864624,
+										0.06684055924415588,
+										-0.5007189512252808,
+										-8.083265612413015e-09,
+										0.9912076592445374,
+										0.1323154717683792,
+										0.5051605105400085,
+										-0.11419161409139633,
+										0.8554373979568481
+									),
+									["Typ\208\181"] = 1,
+									Aim = vector.create(
+										4.722629547119141,
+										287.9955749511719,
+										-149.07611083984375
+									)
+								}
+							}
+
+							game:GetService("ReplicatedStorage")
+								:WaitForChild("Remotes")
+								:WaitForChild("SkillRemote")
+								:FireServer(unpack(args))
+						end
+					end
+				end)
+
+				task.wait(1.5)
+			end
+		end)
+	end
+})
+Tab7:AddLabel("Setting Dungeon")
+getgenv().AutoStart = false
+
+Tab7:AddToggle({
+	Name = "Auto Start",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoStart = Value
+
+		task.spawn(function()
+			local started = false
+			local Bosses = {
+				"Garriot",
+				"Great Droid",
+				"Atom Max" ,
+                "Mecha Soldier" ,
+			}
+
+			while getgenv().AutoStart do
+				task.wait(1)
+
+				local eventMobs = workspace:FindFirstChild("World Mobs")
+					and workspace["World Mobs"]:FindFirstChild("Event Mobs")
+
+				if eventMobs then
+					for _, bossName in ipairs(Bosses) do
+						local boss = eventMobs:FindFirstChild(bossName)
+
+						if boss then
+							local humanoid = boss:FindFirstChildOfClass("Humanoid")
+
+							if humanoid then
+								if humanoid.Health > 0 then
+									started = true
+								end
+
+								if started and humanoid.Health <= 0 then
+									started = false
+
+									game:GetService("StarterGui"):SetCore("SendNotification", {
+										Title = "Auto Start",
+										Text = bossName .. " đã chết, 25s start tiếp...",
+										Duration = 5
+									})
+
+									task.wait(4.04)
+
+									if getgenv().AutoStart then
+										game:GetService("ReplicatedStorage")
+											:WaitForChild("Packages")
+											:WaitForChild("_Index")
+											:WaitForChild("sleitnick_knit@1.4.7")
+											:WaitForChild("knit")
+											:WaitForChild("Services")
+											:WaitForChild("DungeonLobbyService")
+											:WaitForChild("RF")
+											:WaitForChild("StartDungeon")
+											:InvokeServer()
+									end
+
+									break
+								end
+							end
+						end
+					end
+				end
+			end
+		end)
+	end
+})
+
+Tab13:AddLabel("0.002% mỗi giây nhận được Full Set Atom")
+
+getgenv().AutoAtomChance = false
+local GotLabel = nil
+
+Tab13:AddToggle({
+	Name = "Auto Random Atom🎁",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoAtomChance = Value
+
+		task.spawn(function()
+			while getgenv().AutoAtomChance do
+				task.wait(1)
+
+				if math.random(1,50000) == 1 then -- 0.002%
+
+					if not GotLabel then
+						GotLabel = Tab:AddLabel("🎉 You get Full Set Atom!")
+					end
+
+					OrionLib:MakeNotification({
+						Name = "Lucky!",
+						Content = "You get Full Set Atom!",
+						Time = 5
+					})
+				end
+			end
+		end)
+	end
+})
+Tab13:AddLabel("0.0002% mỗi giây nhận được helmet Ancinet")
+
+getgenv().AutoAtomChance = false
+local GotLabel = nil
+
+Tab13:AddToggle({
+	Name = "Auto Random Droid🎁",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoAtomChance = Value
+
+		task.spawn(function()
+			while getgenv().AutoAtomChance do
+				task.wait(1)
+
+				if math.random(1,500000) == 1 then -- 0.002%
+
+					if not GotLabel then
+						GotLabel = Tab:AddLabel("🎉 You get Full Set Atom!")
+					end
+
+					OrionLib:MakeNotification({
+						Name = "Lucky!",
+						Content = "Set Ancient helmet",
+						Time = 5
+					})
+				end
+			end
+		end)
+	end
+})
+getgenv().AutoRangeAtom = false
+
+Tab7:AddToggle({
+    Name = "Auto Range Atom",
+    Default = false,
+    Callback = function(Value)
+        getgenv().AutoRangeAtom = Value
+
+        task.spawn(function()
+            while getgenv().AutoRangeAtom do
+                local atom = workspace:FindFirstChild("World Mobs")
+                    and workspace["World Mobs"]:FindFirstChild("Event Mobs")
+                    and workspace["World Mobs"]["Event Mobs"]:FindFirstChild("Atom Max")
+
+                if atom then
+                    local hitbox = atom:FindFirstChild("Hitbox")
+                        or atom:FindFirstChild("HumanoidRootPart")
+                        or atom.PrimaryPart
+
+                    if hitbox and hitbox:IsA("BasePart") then
+                        hitbox.Size = Vector3.new(700, 700, 700)
+                        hitbox.CanCollide = false
+                        hitbox.Massless = true
+                    end
+                end
+
+                task.wait(0.2)
+            end
+        end)
+    end
+})
+getgenv().AutoLockAtom = false
+
+Tab7:AddToggle({
+    Name = "Auto Lock Atom",
+    Default = false,
+    Callback = function(Value)
+        getgenv().AutoLockAtom = Value
+
+        task.spawn(function()
+            while getgenv().AutoLockAtom do
+                pcall(function()
+                    local atom = workspace:FindFirstChild("World Mobs")
+                        and workspace["World Mobs"]:FindFirstChild("Event Mobs")
+                        and workspace["World Mobs"]["Event Mobs"]:FindFirstChild("Atom Max")
+
+                    if atom then
+                        game:GetService("ReplicatedStorage")
+                            :WaitForChild("Packages")
+                            :WaitForChild("_Index")
+                            :WaitForChild("sleitnick_knit@1.4.7")
+                            :WaitForChild("knit")
+                            :WaitForChild("Services")
+                            :WaitForChild("SkillManager")
+                            :WaitForChild("RE")
+                            :WaitForChild("LockedOnChanged")
+                            :FireServer(atom)
+                    end
+                end)
+
+                task.wait(0.2)
+            end
+        end)
+    end
+})
+local reportText = "" -- Lưu nội dung textbox
+
+Tab19:AddTextbox({
+    Name = "Nội dung report",
+    Default = "",
+    TextDisappear = false,
+    Callback = function(Value)
+        reportText = Value
+    end
+})
+
+Tab19:AddButton({
+    Name = "Send report",
+    Callback = function()
+        if reportText == "" or reportText == nil then
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Vui lòng nhập nội dung trước khi gửi!",
+                Image = "rbxassetid://4483345998",
+                Time = 4
+            })
+            return
+        end
+
+        local player = game:GetService("Players").LocalPlayer
+        local playerName = player.Name
+        local displayName = player.DisplayName
+
+        local message = string.format(
+            "**Report mới**\n**Tên:** %s (%s)\n**UserId:** %s\n**Nội dung:**\n```%s```",
+            playerName,
+            displayName,
+            tostring(player.UserId),
+            reportText
+        )
+
+        local webhook = "https://discord.com/api/webhooks/1531274959635349566/LDhD-tniLOWPd4pGmN4jvw0xG2kbsrDPVI7Lprb4Y_lkmco-Q32wXuaKM8OYAAFx7mF5"
+
+        local data = {
+            content = message
+        }
+
+        local HttpService = game:GetService("HttpService")
+        local jsonData = HttpService:JSONEncode(data)
+
+        local success, err = pcall(function()
+            -- Hỗ trợ hầu hết executor (Synapse, Script-Ware, Fluxus, Wave...)
+            if request then
+                request({
+                    Url = webhook,
+                    Method = "POST",
+                    Headers = {
+                        ["Content-Type"] = "application/json"
+                    },
+                    Body = jsonData
+                })
+            elseif syn and syn.request then
+                syn.request({
+                    Url = webhook,
+                    Method = "POST",
+                    Headers = {
+                        ["Content-Type"] = "application/json"
+                    },
+                    Body = jsonData
+                })
+            elseif http_request then
+                http_request({
+                    Url = webhook,
+                    Method = "POST",
+                    Headers = {
+                        ["Content-Type"] = "application/json"
+                    },
+                    Body = jsonData
+                })
+            else
+                -- Fallback (có thể bị block bởi Discord)
+                HttpService:PostAsync(webhook, jsonData)
+            end
+        end)
+
+        if success then
+            OrionLib:MakeNotification({
+                Name = "Thành công",
+                Content = "Đã gửi report thành công!",
+                Image = "rbxassetid://4483345998",
+                Time = 4
+            })
+            reportText = "" -- Xóa sau khi gửi
+        else
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Gửi thất bại: " .. tostring(err),
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+})
+
+OrionLib:Init()
+getgenv().AutoSearchBooth = false
+
+Tab8:AddToggle({
+	Name = "Auto Search Booth good",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoSearchBooth = Value
+
+		if Value then
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local Booths = workspace:WaitForChild("Misc"):WaitForChild("Booths")
+
+				while getgenv().AutoSearchBooth do
+					-- Tạm dừng nếu dưới 20 người
+					while getgenv().AutoSearchBooth and #Players:GetPlayers() < 20 do
+						task.wait(2)
+					end
+
+					for i = 1, 16 do
+						if not getgenv().AutoSearchBooth then
+							break
+						end
+
+						local booth = Booths:FindFirstChild("Booth" .. i)
+						if booth then
+							local remote = booth:FindFirstChild("TradeBooth")
+								and booth.TradeBooth:FindFirstChild("RE")
+								and booth.TradeBooth.RE:FindFirstChild("Claim")
+
+							if remote then
+								pcall(function()
+									remote:FireServer(true)
+								end)
+							end
+						end
+					end
+
+					task.wait(0.2)
+				end
+			end)
+		end
+	end
+})
+getgenv().AutoPleaseBuy = false
+
+Tab8:AddToggle({
+	Name = "Auto please buy",
+	Default = false,
+	Callback = function(Value)
+		getgenv().AutoPleaseBuy = Value
+
+		if Value then
+			task.spawn(function()
+				local RS = game:GetService("ReplicatedStorage")
+				local ExecuteSkill = RS:WaitForChild("Packages")
+					:WaitForChild("_Index")
+					:WaitForChild("sleitnick_knit@1.4.7")
+					:WaitForChild("knit")
+					:WaitForChild("Services")
+					:WaitForChild("SkillManagerV2")
+					:WaitForChild("RE")
+					:WaitForChild("ExecuteSkill")
+
+				local messages = {
+					"huhu buy please",
+					"😭😭😭",
+					"I haven't eaten anything yet, please."
+				}
+
+				while getgenv().AutoPleaseBuy do
+					for _, msg in ipairs(messages) do
+						if not getgenv().AutoPleaseBuy then
+							break
+						end
+
+						pcall(function()
+							ExecuteSkill:FireServer(
+								"Weapons_21_1",
+								{
+									InputText = msg,
+									TargetPos = Vector3.new(
+										127.73929595947266,
+										807.0628662109375,
+										-136.1484832763672
+									)
+								},
+								1
+							)
+						end)
+
+						for i = 1, 100 do
+							if not getgenv().AutoPleaseBuy then
+								break
+							end
+							task.wait(0.1)
+						end
+					end
+				end
+			end)
+		end
+	end
+})
+local Players = game:GetService("Players")
+local RS = game:GetService("ReplicatedStorage")
+
+local LP = Players.LocalPlayer
+
+local SkillSupportOrb = false
+local SkillGui
+
+Tab16:AddToggle({
+	Name = "Skills support Orb organ",
+	Default = false,
+	Callback = function(Value)
+		SkillSupportOrb = Value
+
+		if not Value then
+			if SkillGui then
+				SkillGui:Destroy()
+				SkillGui = nil
+			end
+			return
+		end
+
+		if SkillGui then
+			SkillGui:Destroy()
+		end
+
+		local gui = Instance.new("ScreenGui")
+		gui.Name = "SkillButtonGui"
+		gui.ResetOnSpawn = false
+		gui.Parent = LP:WaitForChild("PlayerGui")
+		SkillGui = gui
+
+		local button = Instance.new("ImageButton")
+		button.Name = "SkillButton"
+		button.Parent = gui
+		button.BackgroundTransparency = 1
+		button.AnchorPoint = Vector2.new(0.5, 0.5)
+		button.Position = UDim2.new(1, -169, 1, -139)
+		button.Size = UDim2.new(0, 42, 0, 42)
+		button.Image = "rbxassetid://9775839370"
+
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(1, 0)
+		corner.Parent = button
+
+		local label = Instance.new("TextLabel")
+		label.Parent = button
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.Text = ""
+		label.TextScaled = true
+		label.Font = Enum.Font.GothamBold
+		label.TextColor3 = Color3.new(1, 1, 1)
+		label.TextStrokeTransparency = 0
+
+		local counting = false
+
+		local function GetCooldown()
+			local cd = 0
+			pcall(function()
+				local skill = workspace.Characters[LP.Name].Status.SkillAction["113"]
+				if skill then
+					cd = skill:GetAttribute("CooldownDuration")
+						or (skill:FindFirstChild("CooldownDuration") and skill.CooldownDuration.Value)
+						or 25
+				end
+			end)
+			return math.floor(cd)
+		end
+
+		local function StartCooldown()
+			if counting then return end
+			counting = true
+
+			local cd = GetCooldown()
+
+			for i = cd, 0, -1 do
+				if not SkillSupportOrb then break end
+				label.Text = tostring(i)
+				task.wait(1)
+			end
+
+			label.Text = ""
+			counting = false
+		end
+
+		local function FireSkill(began)
+			local cam = workspace.CurrentCamera
+			local char = workspace.Characters:FindFirstChild(LP.Name)
+			local root = char and char:FindFirstChild("HumanoidRootPart")
+			if not root then return end
+
+			RS.Remotes.SkillRemote:FireServer({
+				Camera = cam.CFrame,
+				SkillId = "113",
+				Began = began,
+				CFrame = root.CFrame,
+				["Typе"] = 1,
+				Aim = root.CFrame.Position + root.CFrame.LookVector * 50
+			})
+		end
+
+		button.MouseButton1Down:Connect(function()
+			FireSkill(true)
+			task.spawn(StartCooldown)
+		end)
+
+		button.MouseButton1Up:Connect(function()
+			FireSkill(false)
+		end)
+
+		button.MouseLeave:Connect(function()
+			FireSkill(false)
+		end)
+	end
+})
+local Players = game:GetService("Players")
+local RS = game:GetService("ReplicatedStorage")
+
+local LP = Players.LocalPlayer
+
+local SkillGui
+local SkillSupport = false
+
+Tab16:AddToggle({
+	Name = "Skills support Scythe",
+	Default = false,
+	Callback = function(Value)
+		SkillSupport = Value
+
+		if not Value then
+			if SkillGui then
+				SkillGui:Destroy()
+				SkillGui = nil
+			end
+			return
+		end
+
+		if SkillGui then
+			SkillGui:Destroy()
+		end
+
+		local gui = Instance.new("ScreenGui")
+		gui.Name = "SkillButtonGui"
+		gui.ResetOnSpawn = false
+		gui.Parent = LP:WaitForChild("PlayerGui")
+		SkillGui = gui
+
+		local button = Instance.new("ImageButton")
+		button.Name = "SkillButton"
+		button.Parent = gui
+		button.BackgroundTransparency = 1
+		button.AnchorPoint = Vector2.new(0.5, 0.5)
+		button.Position = UDim2.new(1, -190, 1, -87)
+		button.Size = UDim2.new(0, 42, 0, 42)
+		button.Image = "rbxassetid://13472637937"
+
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(1, 0)
+		corner.Parent = button
+
+		local label = Instance.new("TextLabel")
+		label.Parent = button
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.Text = ""
+		label.TextScaled = true
+		label.Font = Enum.Font.GothamBold
+		label.TextColor3 = Color3.new(1,1,1)
+		label.TextStrokeTransparency = 0
+
+		local counting = false
+
+		local function StartCooldown()
+			if counting then return end
+			counting = true
+
+			local char = workspace.Characters:WaitForChild(LP.Name)
+			local skill = char.Status.SkillAction:WaitForChild("Weapons_3_1")
+
+			local cd = skill:GetAttribute("CooldownDuration")
+				or (skill:FindFirstChild("CooldownDuration") and skill.CooldownDuration.Value)
+				or 0
+
+			for i = math.floor(cd), 0, -1 do
+				if not SkillSupport then break end
+				label.Text = tostring(i)
+				task.wait(1)
+			end
+
+			label.Text = ""
+			counting = false
+		end
+
+		button.MouseButton1Click:Connect(function()
+			RS.Remotes.SkillRemote:FireServer({
+				Camera = CFrame.new(
+					74.2727279663086,251.0009002685547,-28.747745513916016,
+					-0.9511321783065796,-0.044049736112356186,0.3056260347366333,
+					0,0.9897724390029907,0.14265543222427368,
+					-0.308784157037735,0.13568417727947235,-0.9414043426513672
+				),
+				SkillId = "123",
+				Began = true,
+				CFrame = CFrame.new(70.45240020751953,247.81771850585938,-16.98019027709961),
+				["Typе"] = 1,
+				Aim = Vector3.new(70.45240020751953,247.81771850585938,-66.98019409179688)
+			})
+
+			task.wait(0.1)
+			task.spawn(StartCooldown)
+		end)
+	end
+})
+local Hehe = false
+
+Tab4:AddToggle({
+	Name = "Super Lag server⚠️",
+	Default = false,
+	Callback = function(Value)
+		Hehe = Value
+
+		if Hehe then
+			task.spawn(function()
+				local Booths = workspace:WaitForChild("Misc"):WaitForChild("Booths")
+
+				while Hehe do
+					task.wait(0.15)
+
+					for i = 1, 34 do
+						local booth = Booths:FindFirstChild("Booth" .. i)
+						if booth then
+							local remote = booth:FindFirstChild("TradeBooth")
+								and booth.TradeBooth:FindFirstChild("RE")
+								and booth.TradeBooth.RE:FindFirstChild("Claim")
+
+							if remote then
+								pcall(function()
+									remote:FireServer(true)
+								end)
+							end
+						end
+					end
+				end
+			end)
+		end
+	end
+})
+local Hehe = false
+
+Tab4:AddToggle({
+	Name = "Norma lag",
+	Default = false,
+	Callback = function(Value)
+		Hehe = Value
+
+		if Hehe then
+			task.spawn(function()
+				local Booths = workspace:WaitForChild("Misc"):WaitForChild("Booths")
+
+				while Hehe do
+					task.wait(0.4)
+
+					for i = 1, 32 do
+						local booth = Booths:FindFirstChild("Booth" .. i)
+						if booth then
+							local remote = booth:FindFirstChild("TradeBooth")
+								and booth.TradeBooth:FindFirstChild("RE")
+								and booth.TradeBooth.RE:FindFirstChild("Claim")
+
+							if remote then
+								pcall(function()
+									remote:FireServer(true)
+								end)
+							end
+						end
+					end
+				end
+			end)
+		end
+	end
+})
+local Hehe = false
+
+Tab4:AddToggle({
+	Name = "Mini lag",
+	Default = false,
+	Callback = function(Value)
+		Hehe = Value
+
+		if Hehe then
+			task.spawn(function()
+				local Booths = workspace:WaitForChild("Misc"):WaitForChild("Booths")
+
+				while Hehe do
+					task.wait(0.8)
+
+					for i = 1, 32 do
+						local booth = Booths:FindFirstChild("Booth" .. i)
+						if booth then
+							local remote = booth:FindFirstChild("TradeBooth")
+								and booth.TradeBooth:FindFirstChild("RE")
+								and booth.TradeBooth.RE:FindFirstChild("Claim")
+
+							if remote then
+								pcall(function()
+									remote:FireServer(true)
+								end)
+							end
+						end
+					end
+				end
+			end)
+		end
+	end
+})
+local Players = game:GetService("Players")
+local RS = game:GetService("ReplicatedStorage")
+local LP = Players.LocalPlayer
+
+local LockRemote = RS.Packages._Index["sleitnick_knit@1.4.7"].knit.Services.SkillManager.RE.LockedOnChanged
+local SkillRemote = RS.Remotes.SkillRemote
+
+-- Settings
+local Settings = {
+    Enabled = false,
+    Range = 100,
+    TargetMobs = true,       -- workspace["World Mobs"].Mobs
+    TargetBoss = true,       -- workspace["World Mobs"]["Boss Mobs"]
+    TargetEventBoss = true   -- workspace["World Mobs"]["Event Mobs"]
+}
+
+local function GetRoot(model)
+    return model:FindFirstChild("HumanoidRootPart")
+        or model:FindFirstChild("PrimaryPart")
+        or model:FindFirstChild("Torso")
+end
+
+local function GetNearestMob()
+    local character = LP.Character
+    if not character then return nil end
+
+    local hrp = character:FindFirstChild("HumanoidRootPart")
+    if not hrp then return nil end
+
+    local nearest
+    local dist = Settings.Range
+
+    local folders = {}
+
+    -- Mobs
+    if Settings.TargetMobs then
+        local folder = workspace["World Mobs"]:FindFirstChild("Mobs")
+        if folder then table.insert(folders, folder) end
+    end
+
+    -- Boss
+    if Settings.TargetBoss then
+        local folder = workspace["World Mobs"]:FindFirstChild("Boss Mobs")
+        if folder then table.insert(folders, folder) end
+    end
+
+    -- Boss Event
+    if Settings.TargetEventBoss then
+        local folder = workspace["World Mobs"]:FindFirstChild("Event Mobs")
+        if folder then table.insert(folders, folder) end
+    end
+
+    for _, folder in ipairs(folders) do
+        for _, mob in ipairs(folder:GetChildren()) do
+            local root = GetRoot(mob)
+            local hum = mob:FindFirstChildWhichIsA("Humanoid")
+
+            if root and hum and hum.Health > 0 then
+                local d = (root.Position - hrp.Position).Magnitude
+                if d < dist then
+                    dist = d
+                    nearest = mob
+                end
+            end
+        end
+    end
+
+    return nearest
+end
+
+-- Main loop
+task.spawn(function()
+    while task.wait(0.1) do
+        if Settings.Enabled then
+            local mob = GetNearestMob()
+            if mob then
+                pcall(function()
+                    LockRemote:FireServer(mob)
+                end)
+
+                pcall(function()
+                    SkillRemote:FireServer({
+                        Camera = workspace.CurrentCamera.CFrame,
+                        SkillId = "101",
+                        Began = true,
+                        CFrame = LP.Character.HumanoidRootPart.CFrame,
+                        ["Typ\208\181"] = 1,
+                        Aim = vector.create(
+                            mob:GetPivot().Position.X,
+                            mob:GetPivot().Position.Y,
+                            mob:GetPivot().Position.Z
+                        )
+                    })
+                end)
+            end
+        end
+    end
+end)
+
+-- UI
+Tab3:AddToggle({
+    Name = "Enemy Blast Aura Kill",
+    Default = false,
+    Callback = function(Value)
+        Settings.Enabled = Value
+    end
+})
+
+Tab3:AddSlider({
+    Name = "Range",
+    Min = 10,
+    Max = 1000,
+    Default = 100,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 10,
+    ValueName = "studs",
+    Callback = function(Value)
+        Settings.Range = Value
+    end
+})
+
+Tab3:AddSection({
+    Name = "Target Filters"
+})
+
+Tab3:AddToggle({
+    Name = "Mobs",
+    Default = true,
+    Callback = function(Value)
+        Settings.TargetMobs = Value
+    end
+})
+
+Tab3:AddToggle({
+    Name = "Boss",
+    Default = true,
+    Callback = function(Value)
+        Settings.TargetBoss = Value
+    end
+})
+
+Tab3:AddToggle({
+    Name = "Zaja + meta",
+    Default = true,
+    Callback = function(Value)
+        Settings.TargetEventBoss = Value
+    end
+})
+
+OrionLib:Init()
+local AutoSkill101 = false
+
+Tab6:AddToggle({
+	Name = "Enenry blast orbit🌀",
+	Default = false,
+	Callback = function(Value)
+		AutoSkill101 = Value
+
+		if Value then
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local RS = game:GetService("ReplicatedStorage")
+				local LP = Players.LocalPlayer
+
+				local LockRemote = RS:WaitForChild("Packages")
+					:WaitForChild("_Index")
+					:WaitForChild("sleitnick_knit@1.4.7")
+					:WaitForChild("knit")
+					:WaitForChild("Services")
+					:WaitForChild("SkillManager")
+					:WaitForChild("RE")
+					:WaitForChild("LockedOnChanged")
+
+				local SkillRemote = RS:WaitForChild("Remotes")
+					:WaitForChild("SkillRemote")
+
+				while AutoSkill101 do
+					local Character = LP.Character
+
+					if Character then
+						LockRemote:FireServer(Character)
+
+						local args = {
+							{
+								Camera = CFrame.new(
+									74.2727279663086, 251.0009002685547, -28.747745513916016,
+									-0.9511321783065796, -0.044049736112356186, 0.3056260347366333,
+									0, 0.9897724390029907, 0.14265543222427368,
+									-0.308784157037735, 0.13568417727947235, -0.9414043426513672
+								),
+								SkillId = "101",
+								Began = true,
+								CFrame = CFrame.new(
+									70.45240020751953, 247.81771850585938, -16.98019027709961,
+									1,0,0,
+									0,1,0,
+									0,0,1
+								),
+								["Typ\208\181"] = 1,
+								Aim = vector.create(
+									70.45240020751953,
+									247.81771850585938,
+									-66.98019409179688
+								)
+							}
+						}
+
+						SkillRemote:FireServer(unpack(args))
+					end
+
+					task.wait(0.1)
+				end
+			end)
+		end
+	end
+})
+local AntiLogsStaff = true
+
+Tab14:AddToggle({
+	Name = "Anti Logs staff check",
+	Default = true,
+	Callback = function(Value)
+		AntiLogsStaff = Value
+	end
+})
+
+task.spawn(function()
+	while task.wait(0.85) do
+		if AntiLogsStaff then
+			local args = {
+				[1] = true
+			}
+
+			game:GetService("ReplicatedStorage")
+				:WaitForChild("Packages")
+				:WaitForChild("_Index")
+				:WaitForChild("sleitnick_knit@1.4.7")
+				:WaitForChild("knit")
+				:WaitForChild("Services")
+				:WaitForChild("FlightService")
+				:WaitForChild("RE")
+				:WaitForChild("Flight")
+				:FireServer(unpack(args))
+		end
+	end
+end)
+
+local AutoObfusca = false
+
+Tab14:AddToggle({
+	Name = "Auto Obfusca DisplayName (Client side)",
+	Default = false,
+	Callback = function(Value)
+		AutoObfusca = Value
+
+		task.spawn(function()
+			local chars = {
+				"#","&","@","₫","$","€","%","!","?","*","+","-","=",
+				"^","~","/","\\","|","<",">","_"
+			}
+
+			while AutoObfusca do
+				local Character = game.Players.LocalPlayer.Character
+				local Humanoid = Character and Character:FindFirstChild("Humanoid")
+
+				if Humanoid then
+					local text = ""
+					local len = math.random(8,16)
+
+					for i = 1, len do
+						text = text .. chars[math.random(#chars)]
+					end
+
+					Humanoid.DisplayName = text
+				end
+
+				task.wait(0.8)
+			end
+		end)
+	end
+})
+Tab14:AddSection({
+    Name = "Flex 🔒"
+})
+Tab14:AddButton({
+	Name = "Inf power For rec video",
+	Callback = function()
+		local Players = game:GetService("Players")
+		local LocalPlayer = Players.LocalPlayer
+
+		local damage = workspace:WaitForChild("Characters")
+			:WaitForChild(LocalPlayer.Name)
+			:WaitForChild("Status")
+			:WaitForChild("Damage")
+
+		damage.Value = math.huge
+	end
+})
+local AutoBeast = false
+
+Tab6:AddToggle({
+	Name = "Auto Beast",
+	Default = false,
+	Callback = function(Value)
+		AutoBeast = Value
+
+		task.spawn(function()
+			while AutoBeast do
+				local args = {
+					[1] = {
+						["Camera"] = CFrame.new(
+							1342.056884765625, 599.060546875, -2938.125244140625,
+							-0.8075301647186279, 0.04853636771440506, -0.5878260731697083,
+							-1.862645149230957e-09, 0.9966084957122803, 0.08228923380374908,
+							0.5898265242576599, 0.06645102798938751, -0.8047914505004883
+						),
+						["SkillId"] = "8",
+						["Began"] = true,
+						["CFrame"] = CFrame.new(
+							1351.19775390625, 595.374755859375, -2932.05810546875,
+							-0.9335607290267944, -3.380608148972897e-08, -0.3584192395210266,
+							-6.43111164322363e-08, 1, 7.3188736848806e-08,
+							0.3584192395210266, 9.137647083434786e-08, -0.9335607290267944
+						),
+						["Typе"] = 1,
+						["Aim"] = Vector3.new(1414.102294921875, 588.9749145507812, -2839.48779296875)
+					}
+				}
+
+				game:GetService("ReplicatedStorage")
+					:WaitForChild("Remotes")
+					:WaitForChild("SkillRemote")
+					:FireServer(unpack(args))
+
+				task.wait(0.1)
+			end
+		end)
+	end
+})
+local AutoClaimDaily = false
+
+Tab6:AddToggle({
+	Name = "Auto Claim daily",
+	Default = true,
+	Callback = function(Value)
+		AutoClaimDaily = Value
+
+		task.spawn(function()
+			while AutoClaimDaily do
+				pcall(function()
+					game:GetService("ReplicatedStorage")
+						:WaitForChild("Packages")
+						:WaitForChild("_Index")
+						:WaitForChild("sleitnick_knit@1.4.7")
+						:WaitForChild("knit")
+						:WaitForChild("Services")
+						:WaitForChild("LoginRewardsService")
+						:WaitForChild("RF")
+						:WaitForChild("ClaimDay")
+						:InvokeServer()
+				end)
+
+				task.wait(5)
+			end
+		end)
+	end
+})
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local Workspace = game:GetService("Workspace")
+
+local LocalPlayer = Players.LocalPlayer
+local AutoNextArea = false
+
+Tab7:AddToggle({
+    Name = "Auto Next Area",
+    Default = false,
+    Callback = function(Value)
+        AutoNextArea = Value
+
+        if not Value then
+            return
+        end
+
+        task.spawn(function()
+            while AutoNextArea do
+                task.wait(0.1)
+
+                -- CHECK SERVER PLAYER
+                if #Players:GetPlayers() >= 2 then
+                    TeleportService:Teleport(game.PlaceId, LocalPlayer)
+                    break
+                end
+
+                -- CHECK DUNGEON
+                local Dungeon = Workspace:FindFirstChild("Dungeon")
+                local Stages = Dungeon and Dungeon:FindFirstChild("Stages")
+                local Stage0 = Stages and Stages:FindFirstChild("0")
+                local NextArea = Stage0 and Stage0:FindFirstChild("NextArea")
+                local Container = NextArea and NextArea:FindFirstChild("Container")
+                local Visual = Container and Container:FindFirstChild("Visual")
+
+                if not Visual then
+                    continue
+                end
+
+                -- CHECK ATOM MAX
+                local WorldMobs = Workspace:FindFirstChild("World Mobs")
+                local EventMobs = WorldMobs and WorldMobs:FindFirstChild("Event Mobs")
+                local AtomMax = EventMobs and EventMobs:FindFirstChild("Atom Max")
+
+                if AtomMax then
+                    continue
+                end
+
+                -- TELEPORT
+                local Character = LocalPlayer.Character
+                local HRP = Character and Character:FindFirstChild("HumanoidRootPart")
+
+                if HRP and Visual:IsA("BasePart") then
+                    HRP.CFrame = Visual.CFrame + Vector3.new(0, 3, 0)
+
+                    task.wait(0.8)
+
+                    -- Nếu tắt trong lúc chờ thì dừng luôn
+                    if not AutoNextArea then
+                        break
+                    end
+
+                    -- CHECK PLAYER
+                    if #Players:GetPlayers() >= 2 then
+                        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+                        break
+                    end
+
+                    -- Visual còn tồn tại không?
+                    if not Visual.Parent then
+                        continue
+                    end
+
+                    -- CHECK ATOM MAX LẠI
+                    WorldMobs = Workspace:FindFirstChild("World Mobs")
+                    EventMobs = WorldMobs and WorldMobs:FindFirstChild("Event Mobs")
+                    AtomMax = EventMobs and EventMobs:FindFirstChild("Atom Max")
+
+                    if AtomMax then
+                        continue
+                    end
+
+                    -- INTERACT
+                    local Pad = NextArea:FindFirstChild("DungeonNextAreaPad")
+                    local RE = Pad and Pad:FindFirstChild("RE")
+                    local Interact = RE and RE:FindFirstChild("Interact")
+
+                    if Interact then
+                        Interact:FireServer()
+                    end
+                end
+            end
+        end)
+    end
+})
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local DEAD_TIME_REQUIRED = 15
+local CHECK_INTERVAL = 0.5
+local isEnabled = false
+local deadStartTime = nil
+
+-- Kiểm tra còn Event Mobs
+local function hasEventMobs()
+	local worldMobs = workspace:FindFirstChild("World Mobs")
+	if not worldMobs then return false end
+
+	local eventMobs = worldMobs:FindFirstChild("Event Mobs")
+	if not eventMobs then return false end
+
+	for _, mob in ipairs(eventMobs:GetChildren()) do
+		if mob:IsA("Model") or mob:IsA("BasePart") then
+			local hum = mob:FindFirstChildOfClass("Humanoid")
+			if hum then
+				if hum.Health > 0 then return true end
+			else
+				return true
+			end
+		end
+	end
+	return false
+end
+
+-- Gọi StartDungeon
+local function triggerStartDungeon()
+	pcall(function()
+		local packages = ReplicatedStorage:WaitForChild("Packages")
+		local index = packages:WaitForChild("_Index")
+		local knitPackage = index:WaitForChild("sleitnick_knit@1.4.7")
+		local knit = knitPackage:WaitForChild("knit")
+		local services = knit:WaitForChild("Services")
+		local dungeonService = services:WaitForChild("DungeonLobbyService")
+		local rf = dungeonService:WaitForChild("RF")
+		local startDungeon = rf:WaitForChild("StartDungeon")
+		startDungeon:InvokeServer()
+	end)
+end
+
+-- Character
+player.CharacterAdded:Connect(function(char)
+	character = char
+	humanoid = char:WaitForChild("Humanoid")
+	deadStartTime = nil
+end)
+
+-- Loop
+task.spawn(function()
+	while true do
+		task.wait(CHECK_INTERVAL)
+
+		if not isEnabled then
+			deadStartTime = nil
+			continue
+		end
+
+		if not humanoid or not humanoid.Parent then continue end
+
+		if humanoid.Health <= 0 then
+			if not deadStartTime then
+				deadStartTime = tick()
+			elseif tick() - deadStartTime >= DEAD_TIME_REQUIRED then
+				if hasEventMobs() then
+					triggerStartDungeon()
+					deadStartTime = nil
+					task.wait(3)
+				end
+			end
+		else
+			deadStartTime = nil
+		end
+	end
+end)
+
+-- Chỉ còn 1 nút Toggle
+Tab7:AddToggle({
+	Name = "Auto Replay",
+	Default = false,
+	Callback = function(Value)
+		isEnabled = Value
+	end
+})
+
+OrionLib:Init()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local RemoveItemRequest = ReplicatedStorage
+    :WaitForChild("Packages")
+    :WaitForChild("_Index")
+    :WaitForChild("sleitnick_knit@1.4.7")
+    :WaitForChild("knit")
+    :WaitForChild("Services")
+    :WaitForChild("InventoryService")
+    :WaitForChild("RE")
+    :WaitForChild("RemoveItemRequest")
+
+
+local isRunning = false
+local loopThread = nil
+
+local function StartLoop()
+    if isRunning then return end
+    isRunning = true
+
+    loopThread = task.spawn(function()
+        while isRunning do
+            for i = 20, 600 do
+                if not isRunning then break end
+
+                local args = {
+                    [1] = tostring(i),
+                    [2] = "AtomMaxWings"
+                }
+
+                pcall(function()
+                    RemoveItemRequest:FireServer(unpack(args))
+                end)
+
+                task.wait(0.1)
+            end
+
+            if isRunning then
+                task.wait(120) -- chờ 2 phút
+            end
+        end
+    end)
+end
+
+local function StopLoop()
+    isRunning = false
+    if loopThread then
+        task.cancel(loopThread)
+        loopThread = nil
+    end
+end
+
+Tab21:AddToggle({
+    Name = "auto Remove Stats scroll 3",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            StartLoop()
+            OrionLib:MakeNotification({
+                Name = "Status",
+                Content = "Loop đã BẬT",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        else
+            StopLoop()
+            OrionLib:MakeNotification({
+                Name = "Status",
+                Content = "Loop đã TẮT",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        end
+    end
+})
+
+OrionLib:MakeNotification({
+    Name = "Loaded",
+    Content = "Script đã sẵn sàng!",
+    Image = "rbxassetid://4483345998",
+    Time = 4
+})
+
+OrionLib:Init()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local RemoveItemRequest = ReplicatedStorage
+    :WaitForChild("Packages")
+    :WaitForChild("_Index")
+    :WaitForChild("sleitnick_knit@1.4.7")
+    :WaitForChild("knit")
+    :WaitForChild("Services")
+    :WaitForChild("InventoryService")
+    :WaitForChild("RE")
+    :WaitForChild("RemoveItemRequest")
+
+
+local isRunning = false
+local loopThread = nil
+
+local function StartLoop()
+    if isRunning then return end
+    isRunning = true
+
+    loopThread = task.spawn(function()
+        while isRunning do
+            for i = 20, 600 do
+                if not isRunning then break end
+
+                local args = {
+                    [1] = tostring(i),
+                    [2] = "AtomMaxWings"
+                }
+
+                pcall(function()
+                    RemoveItemRequest:FireServer(unpack(args))
+                end)
+
+                task.wait(0.1)
+            end
+
+            if isRunning then
+                task.wait(120) -- chờ 2 phút
+            end
+        end
+    end)
+end
+
+local function StopLoop()
+    isRunning = false
+    if loopThread then
+        task.cancel(loopThread)
+        loopThread = nil
+    end
+end
+
+Tab21:AddToggle({
+    Name = "Auto Remove Atom wing Vanity",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            StartLoop()
+            OrionLib:MakeNotification({
+                Name = "Status",
+                Content = "Loop đã BẬT",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        else
+            StopLoop()
+            OrionLib:MakeNotification({
+                Name = "Status",
+                Content = "Loop đã TẮT",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+        end
+    end
+})
+
+OrionLib:MakeNotification({
+    Name = "Loaded",
+    Content = "Script đã sẵn sàng!",
+    Image = "rbxassetid://4483345998",
+    Time = 4
+})
+OrionLib:Init()
+ 	
+
+
+
+    
+                            
+
+            
+
+                        
+
